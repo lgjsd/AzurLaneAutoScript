@@ -143,9 +143,17 @@ class EquipmentCodeHandler(StorageHandler):
         self.codes.export_to_config()
 
     def equip_preview_empty(self):
-        for index in range(6):
-            if not self.appear(globals()['EQUIPMENT_CODE_EQUIP_{index}'.format(index=index)]):
+        for index in range(5):
+            asset_name = 'EQUIPMENT_CODE_EQUIP_{index}'.format(index=index)
+            asset_to_check = globals().get(asset_name)
+            if asset_to_check is None:
+                logger.error(f"Asset {asset_name} not found in globals for equip_preview_empty check. This is a script setup error.")
                 return False
+
+            if not self.appear(asset_to_check):
+                logger.info(f"equip_preview_empty: Asset not visible: {asset_name}. Preview is considered not empty.")
+                return False
+        logger.info("equip_preview_empty: First 5 (0-4) slot-empty-indicator assets detected. Slot 5 (index 5) is ignored. Preview is considered empty.")
         return True
     
     def clear_equip_preview(self, skip_first_screenshot=True):
@@ -160,7 +168,7 @@ class EquipmentCodeHandler(StorageHandler):
                 logger.info('Confirm equipment preview cleared.')
                 break
 
-            if self.appear_then_click(EQUIPMENT_CODE_CLEAR):
+            if self.appear_then_click(EQUIPMENT_CODE_CLEAR, interval=1):
                 continue
 
     def enter_equip_code_input_mode(self, skip_first_screenshot=True):
