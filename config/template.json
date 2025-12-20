@@ -310,7 +310,7 @@
     },
     "GemsFarming": {
       "CommonCV": "any",
-      "ChangeVanguard": "ship",
+      "ChangeVanguard": "ship_equip",
       "CommonDD": "any",
       "EquipmentCode": "DD: null\nbogue: null\nhermes: null\nlangley: null\nranger: null",
       "CommissionLimit": true

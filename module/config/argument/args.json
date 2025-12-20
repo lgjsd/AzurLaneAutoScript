@@ -1603,10 +1603,9 @@
       },
       "ChangeVanguard": {
         "type": "select",
-        "value": "ship",
+        "value": "ship_equip",
         "option": [
           "disabled",
-          "ship",
           "ship_equip"
         ]
       },

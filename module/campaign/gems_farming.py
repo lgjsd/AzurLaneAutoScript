@@ -121,15 +121,15 @@ class GemsFarming(CampaignRun, Dock, FleetEquipment, GemsEquipmentHandler):
 
     @property
     def change_vanguard(self):
-        return 'ship' in self.config.GemsFarming_ChangeVanguard
+        return self.config.GemsFarming_ChangeVanguard != 'disabled'
 
     @property
     def change_flagship_equip(self):
-        return self.config.GemsFarming_ChangeVanguard == 'ship_equip'
+        return self.change_vanguard
 
     @property
     def change_vanguard_equip(self):
-        return self.config.GemsFarming_ChangeVanguard == 'ship_equip'
+        return self.change_vanguard
 
     @property
     def fleet_to_attack(self):
@@ -435,7 +435,7 @@ class GemsFarming(CampaignRun, Dock, FleetEquipment, GemsEquipmentHandler):
             mode (str): `normal` or `hard`
             total (int):
         """
-        self.config.override(STOP_IF_REACH_LV32=True)
+        self.config.override(STOP_IF_REACH_LV32=self.change_vanguard)
 
         while 1:
             self._trigger_lv32 = False
@@ -451,8 +451,9 @@ class GemsFarming(CampaignRun, Dock, FleetEquipment, GemsEquipmentHandler):
 
             # End
             if self._trigger_lv32 or self._trigger_emotion:
-                success = self.flagship_change()
+                success = True
                 if self.change_vanguard:
+                    success = self.flagship_change()
                     success = success and self.vanguard_change()
 
                 if is_limit and self.config.StopCondition_RunCount <= 0:

@@ -269,8 +269,8 @@ GemsFarming:
     value: any
     option: [ any, langley, bogue, ranger, hermes ]
   ChangeVanguard:
-    value: ship
-    option: [ disabled, ship, ship_equip ]
+    value: ship_equip
+    option: [ disabled, ship_equip ]
   CommonDD:
     value: any
     option: [ any, favourite, aulick_or_foote , cassin_or_downes, z20_or_z21 ]
