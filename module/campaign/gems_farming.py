@@ -472,9 +472,10 @@ class GemsFarming(CampaignRun, Dock, FleetEquipment, GemsEquipmentHandler):
                     self.campaign.ensure_auto_search_exit()
                     self.config.task_stop()
                 elif not success:
-                    self.campaign.ensure_auto_search_exit()
-                    self.config.task_delay(minute=30)
-                    self.config.task_stop()
+                    logger.warning(
+                        'No eligible ships found to swap in (LV32/emotion limit reached); '
+                        'continue GemsFarming to farm new candidates.'
+                    )
 
                 continue
             else:
