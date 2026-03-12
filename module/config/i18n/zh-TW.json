@@ -766,7 +766,7 @@
       "event_20250912_cn": "起舞於天原之上",
       "event_20251023_cn": "颶風與自由群島",
       "event_20251218_cn": "響徹於天穹之音",
-      "event_20260226_cn": "Springtide Inn Online",
+      "event_20260226_cn": "春滿客棧Online",
       "raid_20200624": "特別演習埃塞克斯級(復刻)",
       "raid_20210708": "復刻穿越彼方的水線",
       "raid_20220127": "演習神秘事件調查",
@@ -913,7 +913,8 @@
       "combat_auto": "自律戰鬥",
       "combat_manual": "手動",
       "stand_still_in_the_middle": "中路站樁",
-      "hide_in_bottom_left": "躲左下角"
+      "hide_in_bottom_left": "躲左下角",
+      "hide_in_upper_left": "躲左上角"
     },
     "Fleet1Step": {
       "name": "一隊步幅",
@@ -947,7 +948,8 @@
       "combat_auto": "自律戰鬥",
       "combat_manual": "手動",
       "stand_still_in_the_middle": "中路站樁",
-      "hide_in_bottom_left": "躲左下角"
+      "hide_in_bottom_left": "躲左下角",
+      "hide_in_upper_left": "躲左上角"
     },
     "Fleet2Step": {
       "name": "二隊步幅",
@@ -1200,7 +1202,7 @@
       "name": "更換前排",
       "help": "當前排紅臉時更換前排，選擇不更換則會強制紅臉出擊\n換前排通過找一艘心情不低於10、等級70的白鷹或鐵血的白船驅逐完成，所以盡量保證有足夠多的驅逐。國服則為等級100的白鷹白船驅逐。\n\n換裝備只會更換正在裝備中的欄位，即使是白裝也會更換。前排會更換全部5個裝備。",
       "disabled": "不更换",
-      "ship_equip": "更換艦船 + 裝備"
+      "ship": "更換艦船"
     },
     "CommonDD": {
       "name": "指定前排",
@@ -1210,10 +1212,6 @@
       "aulick_or_foote": "奧利克或富特",
       "cassin_or_downes": "卡辛或唐斯",
       "z20_or_z21": "Z20或Z21"
-    },
-    "EquipmentCode": {
-      "name": "裝備碼",
-      "help": "僅當選擇「更換艦船 + 裝備」時生效。\n在換下艦船時，若設定裏當前艦船裝備碼為null則會導出；在換上艦船時，若設定裏當前艦船裝備碼為null則會使用上一艘艦船導出的裝備碼，否則使用設定裏的裝備碼\n藍疊模擬器用戶需要先開啟虛擬鍵盤，詳見https://support.bluestacks.com/hc/zh-tw/articles/360061968892-%E5%A6%82%E4%BD%95%E5%9C%A8-BlueStacks-5-%E4%B8%8A%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%8D%B5%E7%9B%A4-%E8%99%9B%E6%93%AC%E9%8D%B5%E7%9B%A4"
     },
     "CommissionLimit": {
       "name": "防止緊急委託數量過多",
