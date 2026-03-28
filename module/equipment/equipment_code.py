@@ -48,13 +48,29 @@ class EquipmentCode:
         self.config = config
         self.config_key = key
         self.coded_ships = ships
-        _config = config.cross_get(keys=key)
+        _config = config.cross_get(keys=key, default=None)
         codes = dict([(ship, None) for ship in self.coded_ships])
-        for line in _config.splitlines():
+        if _config is None:
+            logger.warning(f'Missing gear code config at `{key}`, using empty defaults')
+        elif isinstance(_config, dict):
+            codes.update(_config)
+        elif isinstance(_config, str):
             try:
-                codes.update(yaml.safe_load(line))
-            except Exception as e:
-                logger.error(f'Failed to parse current line of the config: "{line}", skipping')
+                loaded = yaml.safe_load(_config)
+                if isinstance(loaded, dict):
+                    codes.update(loaded)
+                elif loaded is not None:
+                    logger.error(f'Unexpected gear code config type at `{key}`: {type(loaded).__name__}')
+            except Exception:
+                for line in _config.splitlines():
+                    try:
+                        loaded = yaml.safe_load(line)
+                        if isinstance(loaded, dict):
+                            codes.update(loaded)
+                    except Exception:
+                        logger.error(f'Failed to parse current line of the config: "{line}", skipping')
+        else:
+            logger.error(f'Unexpected gear code config type at `{key}`: {type(_config).__name__}')
         for ship in self.coded_ships:
             code: str = codes.pop(ship, None)
             self.__setattr__(ship, code)
