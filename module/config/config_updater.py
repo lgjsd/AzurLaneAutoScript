@@ -553,6 +553,8 @@ class ConfigGenerator:
 class ConfigUpdater:
     # source, target, (optional)convert_func
     redirection = [
+        # Preserve gear codes saved by the local GemsFarming implementation.
+        ('GemsFarming.GemsFarming.EquipmentCode', 'GemsFarming.EquipmentCode.Config'),
         # ('OpsiDaily.OpsiDaily.BuySupply', 'OpsiShop.Scheduler.Enable'),
         # ('OpsiDaily.Scheduler.Enable', 'OpsiDaily.OpsiDaily.DoMission'),
         # ('OpsiShop.Scheduler.Enable', 'OpsiShop.OpsiShop.BuySupply'),

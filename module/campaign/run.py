@@ -414,6 +414,7 @@ class CampaignRun(CampaignEvent):
                     self.campaign.ensure_campaign_ui(name=self.stage, mode=mode)
             else:
                 self.campaign.ensure_campaign_ui(name=self.stage, mode=mode)
+            self.config.override(Campaign_Mode=self.campaign.config.Campaign_Mode)
             self.disable_raid_on_event()
             self.handle_commission_notice()
 
