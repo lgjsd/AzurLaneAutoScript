@@ -162,6 +162,9 @@ class EquipmentCodeHandler(StorageHandler):
 
     def set_fastinput_ime(self):
         d = self.device.u2
+        name, _ = d.current_ime()
+        if name == self.FASTINPUT_IME:
+            return
         failed = False
         try:
             for command in ('enable', 'set'):
@@ -185,12 +188,11 @@ class EquipmentCodeHandler(StorageHandler):
         click_timer = Timer(1, count=3)
         for _ in self.loop():
             name, shown = d.current_ime()
+            if name != self.FASTINPUT_IME:
+                self.set_fastinput_ime()
+                continue
             if shown:
-                if name != self.FASTINPUT_IME:
-                    self.set_fastinput_ime()
-                    continue
-                else:
-                    break
+                break
             if click_timer.reached_and_reset():
                 self.device.click(EQUIPMENT_CODE_TEXTBOX)
         else:
