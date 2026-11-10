@@ -696,7 +696,7 @@
     },
     "Campaign": {
       "Name": "D3",
-      "Event": "war_archives_20251023_cn",
+      "Event": "war_archives_20230817_cn",
       "Mode": "normal",
       "UseClearMode": true,
       "UseFleetLock": true,
@@ -1950,7 +1950,8 @@
       "DailyBufferItems": "{}",
       "ManualBufferItems": "{}",
       "IdleAccumulatingItems": "{}",
-      "SkipBufferSurplus": true
+      "SkipBufferSurplus": true,
+      "UseWorkerjuuByDefault": true
     },
     "Storage": {
       "Storage": {}
@@ -1967,6 +1968,19 @@
     },
     "IslandOrder": {
       "StuckSeasonOrderId": 0
+    },
+    "Storage": {
+      "Storage": {}
+    }
+  },
+  "IslandTransport": {
+    "Scheduler": {
+      "Enable": false,
+      "NextRun": "2020-01-01 00:00:00",
+      "Command": "IslandTransport",
+      "SuccessInterval": 0,
+      "FailureInterval": 120,
+      "ServerUpdate": "03:00, 18:00"
     },
     "Storage": {
       "Storage": {}

@@ -256,7 +256,7 @@
     },
     "OpsiCrossMonth": {
       "name": "Cross Month Daily",
-      "help": "    ALAS will enter OpSi 10min before OpSi reset, wait until OpSi reset but not exit OpSi. Then do the daily, obscure, abyssal and meowfficer farming to get extra gold plates. When running dailies, settings in task \"OpSiDaily\" are used, the rest function are the same.\n    IMPORTANT: Please do not touch the game while ALAS is waiting for OpSi reset."
+      "help": "ALAS will enter OpSi 10min before OpSi reset, wait until OpSi reset but not exit OpSi. Then do the daily, obscure, abyssal and meowfficer farming to get extra gold plates. When running dailies, settings in task \"OpSiDaily\" are used, the rest function are the same.\nIMPORTANT: Please do not touch the game while ALAS is waiting for OpSi reset."
     },
     "IslandProduction": {
       "name": "Island Production",
@@ -265,6 +265,10 @@
     "IslandOrder": {
       "name": "Island Request",
       "help": ""
+    },
+    "IslandTransport": {
+      "name": "Island Transport",
+      "help": "Claim finished transports, then submit the commissions worth the most to the production plan, swapping in commissions from the list when they are better.\nCommissions are valued with the production plan, run Tools - Island Production Planner first."
     },
     "IslandFreebie": {
       "name": "Daily Supplies",
@@ -458,7 +462,7 @@
       "name": "Screenshot Method",
       "help": "When using auto-select, a benchmark will be performed and automatically changed to the fastest screenshot method.\nGeneral speed: DroidCast_raw >> aScreenCap_nc > ADB_nc >>> aScreenCap > uiautomator2 ~= ADB.\nRun Tools - Performance Test to find the fastest method.",
       "auto": "Auto-select the fastest",
-      "ADB": "ADB ",
+      "ADB": "ADB",
       "ADB_nc": "ADB_nc",
       "uiautomator2": "uiautomator2",
       "aScreenCap": "aScreenCap",
@@ -534,7 +538,7 @@
     },
     "OnePushConfig": {
       "name": "Error notify config",
-      "help": "When Alas cannot handle exception, send a message through Onepush. Configuration document: \nhttps://github.com/LmeSzinc/AzurLaneAutoScript/wiki/Onepush-configuration-%5BEN%5D"
+      "help": "When Alas cannot handle exception, send a message through Onepush. Configuration document:\nhttps://github.com/LmeSzinc/AzurLaneAutoScript/wiki/Onepush-configuration-%5BEN%5D"
     },
     "ScreenshotLength": {
       "name": "Record Screenshot(s)",
@@ -868,6 +872,7 @@
       "war_archives_20230223_cn": "archives Revelations of Dust",
       "war_archives_20230525_cn": "archives Confluence of Nothingness",
       "war_archives_20230803_cn": "archives Anthem of Remembrance",
+      "war_archives_20230817_cn": "archives The Fools Scales",
       "war_archives_20231026_cn": "archives Tempesta and the Fountain of Youth",
       "war_archives_20240725_cn": "archives Interlude of Illusions",
       "war_archives_20241024_cn": "archives Tempesta and the Sleeping Sea",
@@ -1161,7 +1166,7 @@
   },
   "EnemyPriority": {
     "_info": {
-      "name": "Enemy Priority ",
+      "name": "Enemy Priority",
       "help": "Customize the priority of the enemy you want to fight"
     },
     "EnemyScaleBalanceWeight": {
@@ -2124,7 +2129,7 @@
     },
     "ClaimMaintenance": {
       "name": "Claim Maintenance Mails",
-      "help": "Mail.ClaimMaintenance.help"
+      "help": ""
     },
     "ClaimTradeLicense": {
       "name": "Claim Trade License Mails",
@@ -2673,6 +2678,10 @@
     "SkipBufferSurplus": {
       "name": "Skip Buffer-Surplus Production",
       "help": "Skip buffer-surplus eligibility checks and proceed directly to idle-accumulating production. When disabled, buffer-surplus is tried first; idle accumulation is still used if that attempt fails."
+    },
+    "UseWorkerjuuByDefault": {
+      "name": "Use Workerjuu by default",
+      "help": "Enabled: use Workerjuu by default. Disabled: search free characters in ascending dock order with at least 100 emotion and an emotion limit below 150, excluding explicitly configured named restaurant waitresses; use Workerjuu if none is available."
     }
   },
   "IslandOrder": {
